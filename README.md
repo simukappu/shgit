@@ -25,7 +25,8 @@ export PATH=<shgit-root-path>/shgit/bin:$PATH
 ```
 
 ## Usage
-Now you can use shgit command from the command line
+Move to your local git repository.  
+Now you can use shgit command in your terminal.
 
 ### Update local and remote self repository as upstream repository
 Update your master and base working branch in the local and remote repository as upstream original repository
