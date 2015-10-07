@@ -1,8 +1,8 @@
 # shgit
-Shell script tools to operate git repository from the command line
+Command line tool to operate local and remote git repositories
 
 ## Description
-Shell script tools to operate git repository as usual task from the command line
+Shell script tool for usual development task with operation to your local and remote repositories.  
 
 ## Design
 This tool is designed for following development style.
