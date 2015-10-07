@@ -1,0 +1,37 @@
+#!/bin/bash
+
+################################################################################
+# shgit: Shell script tools to operate git repository from the command line    #
+#                                                                              #
+# @auther: Shota Yamazaki                                                      #
+################################################################################
+
+function usage() {
+cat <<_EOT_
+Usage:
+  shgit [<u|udtrep|update-self-repositoty> | <d|delrb|delete-remote-branches>] [-h | <options>]
+
+Description:
+  shgit: shell script tools to operate git repository from command line
+
+Commands:
+  <u|udtrep|update-self-repositoty>  Update local and remote self repository as upstream repository
+  <d|delrb|delete-remote-branches>   Delete remote branches with confirmation
+
+_EOT_
+exit 1
+}
+
+COMMAND=$1
+case $COMMAND in
+  u|udtrep|update-self-repositoty)
+    `dirname $0`/scripts/shgit-update-self-repositoty.sh "$@"
+    ;;
+  d|delrb|delete-remote-branches)
+    `dirname $0`/scripts/shgit-delete-remote-branches.sh "$@"
+    ;;
+  *)
+    usage
+    ;;
+esac
+
