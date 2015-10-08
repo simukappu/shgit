@@ -6,19 +6,19 @@ Shell script tool for usual development task with operation to your local and re
 
 ## Design
 This tool is designed for following development style.
-* Remote repository (default name is 'origin') is folked from original repository (default name is 'upstream').
-* Local repository is cloned from remote repository.
-* Your new commit in the local repository will be pushed to working branch in the remote repository.
-* Then you will make pull request from your new remote working branch to base working branch (default name is 'development') in original repository.
+* Your remote repository (default name is 'origin') is folked from upstream repository (default name is 'upstream').
+* Local repository is cloned from your remote repository.
+* Your new commit in the local repository will be pushed to working branch in your remote repository.
+* Then you will make pull request from your new remote working branch to base working branch (default name is 'development') in upstream repository.
 
 ## Requirement
-1. Clone this repository in any <shgit-root-path> you like.
+1. Clone this repository in any \<shgit-root-path\> you like.
     ```sh
 $ cd <shgit-root-path>  
 $ git clone https://github.com/simukappu/shgit.git
 ```
 
-2. Add "\<shgit-root-path\>/shgit/bin" to PATH environment variable.  
+2. Add "\<shgit-root-path\>/shgit/bin" to PATH.  
 Writing to profile (.bashrc, .bash_profile and so on) may also good for you. 
     ```sh
 export PATH=<shgit-root-path>/shgit/bin:$PATH
@@ -28,8 +28,8 @@ export PATH=<shgit-root-path>/shgit/bin:$PATH
 Move to your local git repository.  
 Now you can use shgit command in your terminal.
 
-### Update local and remote self repository as upstream repository
-Update your master and base working branch in the local and remote repository as upstream original repository
+### Update your local and remote repositories to upstream repository
+Update your master and base working branch in your local and remote repositories to upstream repository
 ```sh
 $ shgit update-self-repositoty [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
 ```

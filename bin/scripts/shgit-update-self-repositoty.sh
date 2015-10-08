@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# Script to update local and remote self repository as upstream repository     #
+# Script to update your local and remote repositories to upstream repository   #
 #                                                                              #
 # @auther: Shota Yamazaki                                                      #
 ################################################################################

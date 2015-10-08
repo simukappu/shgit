@@ -15,7 +15,7 @@ Description:
   shgit: shell script tools to operate git repository from command line
 
 Commands:
-  <u|udtrep|update-self-repositoty>  Update local and remote self repository as upstream repository
+  <u|udtrep|update-self-repositoty>  Update your local and remote repositories to upstream repository
   <d|delrb|delete-remote-branches>   Delete remote branches with confirmation
 
 _EOT_
