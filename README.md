@@ -14,14 +14,14 @@ This tool is designed for following development style.
 ## Requirement
 shgit needs bash.
 
-1. Clone this repository in any \<shgit-root-path\> you like.
-    ```sh
+1: Clone this repository in any \<shgit-root-path\> you like.
+```sh
 $ cd <shgit-root-path>  
 $ git clone https://github.com/simukappu/shgit.git
 ```
-2. Add "\<shgit-root-path\>/shgit/bin" to PATH.  
+2: Add "\<shgit-root-path\>/shgit/bin" to PATH.  
 Writing to profile (.bashrc, .bash_profile and so on) may be also good for you.
-    ```sh
+```sh
 export PATH=<shgit-root-path>/shgit/bin:$PATH
 ```
 
