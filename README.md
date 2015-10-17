@@ -12,6 +12,8 @@ This tool is designed for following development style.
 * Then you will make pull request from your new remote working branch to base working branch (default name is 'development') in upstream repository.
 
 ## Requirement
+shgit needs bash.
+
 1. Clone this repository in any \<shgit-root-path\> you like.
 ```sh
 $ cd <shgit-root-path>  
