@@ -19,8 +19,8 @@ $ git clone https://github.com/simukappu/shgit.git
 ```
 
 2. Add "\<shgit-root-path\>/shgit/bin" to PATH.  
-Writing to profile (.bashrc, .bash_profile and so on) may also good for you.
-```sh
+Writing to profile (.bashrc, .bash_profile and so on) may be also good for you.
+    ```sh
 export PATH=<shgit-root-path>/shgit/bin:$PATH
 ```
 
