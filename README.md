@@ -13,14 +13,14 @@ This tool is designed for following development style.
 
 ## Requirement
 1. Clone this repository in any \<shgit-root-path\> you like.
-    ```sh
+```sh
 $ cd <shgit-root-path>  
 $ git clone https://github.com/simukappu/shgit.git
 ```
 
 2. Add "\<shgit-root-path\>/shgit/bin" to PATH.  
-Writing to profile (.bashrc, .bash_profile and so on) may also good for you. 
-    ```sh
+Writing to profile (.bashrc, .bash_profile and so on) may also good for you.
+```sh
 export PATH=<shgit-root-path>/shgit/bin:$PATH
 ```
 
@@ -31,23 +31,25 @@ Now you can use shgit command in your terminal.
 ### Update your local and remote repositories to upstream repository
 Update your master and base working branch in your local and remote repositories to upstream repository
 ```sh
-$ shgit update-self-repositoty [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
+$ shgit update [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
 ```
-Also works
+
+### Delete local branches with confirmation
+Delete your unnecessary local branches with confirmation
 ```sh
-$ shgit udtrep [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
-$ shgit u [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
+$ shgit deletelocal [-fm] [-b base_working_branch]
 ```
 
 ### Delete remote branches with confirmation
 Delete your unnecessary remote branches with confirmation
 ```sh
-$ shgit delete-remote-branches [-fpm] [-b base_working_branch] [-r remote_repository]
-``` 
-Also works
+$ shgit deleteremote [-fpm] [-b base_working_branch] [-r remote_repository]
+```
+
+### Prepare new development branch
+Prepare new development branch with updating and cleaning unnecessary branches
 ```sh
-$ shgit delrb [-fpm] [-b base_working_branch] [-r remote_repository]
-$ shgit d [-fpm] [-b base_working_branch] [-r remote_repository]
+$ shgit prepare [-mcf] [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
 ```
 
 ## License

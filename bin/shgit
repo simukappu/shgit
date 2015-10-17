@@ -9,14 +9,16 @@
 function usage() {
 cat <<_EOT_
 Usage:
-  shgit [<u|udtrep|update-self-repositoty> | <d|delrb|delete-remote-branches>] [-h | <options>]
+  shgit [<update> | <deleteremote> | <deletelocal> | <prepare>] [-h | <options>]
 
 Description:
   shgit: shell script tools to operate git repository from command line
 
 Commands:
-  <u|udtrep|update-self-repositoty>  Update your local and remote repositories to upstream repository
-  <d|delrb|delete-remote-branches>   Delete remote branches with confirmation
+  <update>       Update your local and remote repositories to upstream repository
+  <deletelocal>  Delete local branches with confirmation
+  <deleteremote> Delete remote branches with confirmation
+  <prepare>      Prepare new development branch
 
 _EOT_
 exit 1
@@ -24,14 +26,19 @@ exit 1
 
 COMMAND=$1
 case $COMMAND in
-  u|udtrep|update-self-repositoty)
-    `dirname $0`/scripts/shgit-update-self-repositoty.sh "$@"
+  update)
+    bash `dirname $0`/scripts/shgit-update-self-repositoty.sh "$@"
     ;;
-  d|delrb|delete-remote-branches)
-    `dirname $0`/scripts/shgit-delete-remote-branches.sh "$@"
+  deletelocal)
+    bash `dirname $0`/scripts/shgit-delete-local-branches.sh "$@"
+    ;;
+  deleteremote)
+    bash `dirname $0`/scripts/shgit-delete-remote-branches.sh "$@"
+    ;;
+  prepare)
+    bash `dirname $0`/scripts/prepare-develpment-branch.sh "$@"
     ;;
   *)
     usage
     ;;
 esac
-
