@@ -40,7 +40,7 @@ else
 fi
 export _UPSTREAM=$VALUE
 
-KEY="development.branch"
+KEY="base.working.branch"
 DEFAULT="developent"
 if [ -r "$PROPFILE" ]; then
   VALUE=`cat "$PROPFILE" | tr -d '\r' | grep -v "#" | grep $KEY | cut -d= -f 2`
