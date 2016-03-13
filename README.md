@@ -49,19 +49,25 @@ $ shgit <u|update> [-b base_working_branch] [-r remote_repository] [-u upstream_
 ### Delete local branches with confirmation
 Delete your unnecessary local branches with confirmation
 ```sh
-$ shgit <dl|deletelocal> [-fm] [-b base_working_branch]
+$ shgit <dl|delete-local> [-fm] [-b base_working_branch]
 ```
 
 ### Delete remote branches with confirmation
 Delete your unnecessary remote branches with confirmation
 ```sh
-$ shgit <dr|deleteremote> [-fpm] [-b base_working_branch] [-r remote_repository]
+$ shgit <dr|delete-remote> [-fpm] [-b base_working_branch] [-r remote_repository]
 ```
 
 ### Prepare new development branch
 Prepare new development branch with updating and cleaning unnecessary branches
 ```sh
 $ shgit <p|prepare> [-mcf] [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
+```
+
+### Send pull-request
+Send pull-request from origin to upstream repository (this function needs [hub](https://github.com/github/hub) instration)
+```sh
+$ shgit <r|pull-request> [-p] [-o origin_branch] [-b target_branch] [-i issue]
 ```
 
 ## License
