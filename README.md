@@ -25,7 +25,6 @@ Writing to profile (.bashrc, .bash_profile and so on) may be also good for you.
 ```sh
 $ echo 'export PATH="$HOME/.shgit/shgit/bin:$PATH"' >> $HOME/.bash_profile  
 $ source $HOME/.bash_profile
-)
 ```
 3: Edit "\<shgit-root-path\>/shgit/config/shgit.properties" as your environment if you need.
 ```sh
