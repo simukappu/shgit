@@ -18,8 +18,8 @@ Options:
   -m  Merge: Update your local and remote repositories to upstream repository
   -c  Delete merged branches
   -f  Force delete branches without confirmation
-  -b  Base working branch name (default is 'development')
-  -r  Target remote repository name (default is 'origin')
+  -b  Base working branch name (default is '$_DEVELOPMENT')
+  -r  Target remote repository name (default is '$_ORIGIN')
   -u  Target upstream repository name to merge (default is 'upstream')
 
 _EOT_
@@ -29,8 +29,8 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="development"
-REMOTE_REPO="origin"
+BASE_WORKING_BRANCH="$_DEVELOPMENT"
+REMOTE_REPO="$_ORIGIN"
 UPSTREAM_REPO="upstream"
 CLEAN_OPT="-m"
 while getopts mcfb:r:u:h OPT

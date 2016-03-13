@@ -15,9 +15,9 @@ Description:
   Script to update local and remote self repository as upstream repository
 
 Options:
-  -b  Base working branch name (default is 'development')
-  -r  Target remote repository name (default is 'origin')
-  -u  Target upstream repository name to merge (default is 'upstream')
+  -b  Base working branch name (default is '$_DEVELOPMENT')
+  -r  Target remote repository name (default is '$_ORIGIN')
+  -u  Target upstream repository name to merge (default is '$_UPSTREAM')
 
 _EOT_
 exit 1
@@ -26,9 +26,9 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="development"
-REMOTE_REPO="origin"
-UPSTREAM_REPO="upstream"
+BASE_WORKING_BRANCH="$_DEVELOPMENT"
+REMOTE_REPO="$_ORIGIN"
+UPSTREAM_REPO="$_UPSTREAM"
 while getopts b:r:u:h OPT
 do
   case $OPT in

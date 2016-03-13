@@ -17,7 +17,7 @@ Description:
 Options:
   -p  Push origin before send pull-request
   -o  Original branch name of pull-request (default is current branch)
-  -b  Target branch name of pull-request (default is 'development')
+  -b  Target branch name of pull-request (default is '$_DEVELOPMENT')
   -i  Issue number associated with a pull-requestBase working branch name
 
 _EOT_
@@ -27,7 +27,7 @@ exit 1
 COMMAND=$1
 shift
 
-TARGET_BRANCH="development"
+TARGET_BRANCH="$_DEVELOPMENT"
 ISSUE_OPT=""
 while getopts po:b:i:h OPT
 do
@@ -68,7 +68,7 @@ if [ "${CURRENT_BRANCH}" != "${ORIGINAL_BRANCH}" ]; then
 fi
 
 if [ "$PUSH_F" = "true" ]; then
-  git push --set-upstream origin ${ORIGINAL_BRANCH}
+  git push --set-upstream $_ORIGIN ${ORIGINAL_BRANCH}
 fi
 hub pull-request ${ISSUE_OPT} -b ${TARGET_BRANCH}
 

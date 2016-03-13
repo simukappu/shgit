@@ -16,23 +16,22 @@ shgit needs bash.
 
 1: Clone this repository in any directory \<shgit-root-path\>  (e.g. $HOME/.shgit) you like.
 ```sh
-$ cd <shgit-root-path>  
-(e.g.  
-  $ mkdir $HOME/.shgit  
-  $ cd $HOME/.shgit  
-)  
+$ mkdir $HOME/.shgit  
+$ cd $HOME/.shgit  
 $ git clone https://github.com/simukappu/shgit.git
 ```
 2: Add "\<shgit-root-path\>/shgit/bin" to PATH.  
 Writing to profile (.bashrc, .bash_profile and so on) may be also good for you.
 ```sh
-$ export PATH=<shgit-root-path>/shgit/bin:$PATH  
-(e.g.  
-  $ echo 'export PATH="$HOME/.shgit/shgit/bin:$PATH"' >> $HOME/.bash_profile  
-  $ source $HOME/.bash_profile
+$ echo 'export PATH="$HOME/.shgit/shgit/bin:$PATH"' >> $HOME/.bash_profile  
+$ source $HOME/.bash_profile
 )
 ```
-3: Now you can use shgit commands from your terminal.  
+3: Edit "\<shgit-root-path\>/shgit/config/shgit.properties" as your environment if you need.
+```sh
+$ vi $HOME/.shgit/shgit/config/shgit.properties
+```
+4: Now you can use shgit commands from your terminal.  
 ```sh
 $ shgit -h
 ```

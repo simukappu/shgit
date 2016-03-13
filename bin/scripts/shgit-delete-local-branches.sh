@@ -17,7 +17,7 @@ Description:
 Options:
   -f  Force delete without confirmation
   -m  Delete merged branches only
-  -b  Base working branch name (default is 'development')
+  -b  Base working branch name (default is '$_DEVELOPMENT')
 
 _EOT_
 exit 1
@@ -26,7 +26,7 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="development"
+BASE_WORKING_BRANCH="$_DEVELOPMENT"
 MERGED_OPT=""
 while getopts fmb:h OPT
 do
