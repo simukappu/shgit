@@ -29,7 +29,7 @@ shift
 
 TARGET_BRANCH="development"
 ISSUE_OPT=""
-while getopts pobi:h OPT
+while getopts po:b:i:h OPT
 do
   case $OPT in
     p)
@@ -60,15 +60,15 @@ if [ "`git rev-parse --is-inside-work-tree`" != "true" ]; then
 fi
 
 CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
-if [ -n "${ORIGINAL_BRANCH}" ]; then
-  ORIGINAL_BRANCH = ${CURRENT_BRANCH}
+if [ -z "${ORIGINAL_BRANCH}" ]; then
+  ORIGINAL_BRANCH="${CURRENT_BRANCH}"
 fi
 if [ "${CURRENT_BRANCH}" != "${ORIGINAL_BRANCH}" ]; then
   git checkout ${ORIGINAL_BRANCH} >/dev/null 2>&1
 fi
 
 if [ "$PUSH_F" = "true" ]; then
-  git push origin
+  git push --set-upstream origin ${ORIGINAL_BRANCH}
 fi
 hub pull-request ${ISSUE_OPT} -b ${TARGET_BRANCH}
 
