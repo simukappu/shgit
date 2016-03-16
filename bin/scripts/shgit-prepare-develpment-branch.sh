@@ -85,10 +85,10 @@ fi
 
 if [ "$ARG_C" = "on" ]; then
   echo "Clean local branches"
-  shgit deletelocal ${CLEAN_OPT} -b ${BASE_WORKING_BRANCH}
+  shgit delete-local ${CLEAN_OPT} -b ${BASE_WORKING_BRANCH}
   echo ""
   echo "Clean remote branches"
-  shgit deleteremote -p ${CLEAN_OPT} -b ${BASE_WORKING_BRANCH} -r ${REMOTE_REPO}
+  shgit delete-remote -p ${CLEAN_OPT} -b ${BASE_WORKING_BRANCH} -r ${REMOTE_REPO}
   echo ""
 fi
 
