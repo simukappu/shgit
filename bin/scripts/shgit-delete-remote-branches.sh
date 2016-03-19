@@ -18,7 +18,7 @@ Options:
   -f  Force delete without confirmation
   -p  Use 'git fetch [remote_repository] --prune' before getting remote branches
   -m  Delete merged branches only
-  -b  Base working branch name (default is '$_DEVELOPMTN')
+  -b  Base working branch name (default is '$_DEVELOPMENT')
   -r  Target remote repository name (default is '$_ORIGIN')
 
 _EOT_
@@ -28,7 +28,7 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="$_DEVELOPMTN"
+BASE_WORKING_BRANCH="$_DEVELOPMENT"
 REMOTE_REPO="$_ORIGIN"
 MERGED_OPT=""
 while getopts fpmb:r:h OPT
