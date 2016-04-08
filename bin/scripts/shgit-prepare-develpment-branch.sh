@@ -31,7 +31,7 @@ shift
 
 BASE_WORKING_BRANCH="$_DEVELOPMENT"
 REMOTE_REPO="$_ORIGIN"
-UPSTREAM_REPO="upstream"
+UPSTREAM_REPO="$_UPSTREAM"
 CLEAN_OPT="-m"
 while getopts mcfb:r:u:h OPT
 do
