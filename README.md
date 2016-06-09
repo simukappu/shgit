@@ -12,25 +12,28 @@ This tool is designed for following development style.
 * Then you will make pull request from your new remote working branch to base working branch (default name is 'development') in upstream repository.
 
 ## Requirement
-shgit needs bash.
+shgit needs bash, Git and [hub](https://github.com/github/hub).
 
-1: Clone this repository in any directory \<shgit-root-path\>  (e.g. $HOME/.shgit) you like.
+1: Install Git and hub.  
+See [https://github.com/github/hub](https://github.com/github/hub)
+
+2: Clone this repository in any directory \<shgit-root-path\>  (e.g. $HOME/.shgit) you like.
 ```sh
 $ mkdir $HOME/.shgit  
 $ cd $HOME/.shgit  
 $ git clone https://github.com/simukappu/shgit.git
 ```
-2: Add "\<shgit-root-path\>/shgit/bin" to PATH.  
+3: Add "\<shgit-root-path\>/shgit/bin" to PATH.  
 Writing to profile (.bashrc, .bash_profile and so on) may be also good for you.
 ```sh
 $ echo 'export PATH="$HOME/.shgit/shgit/bin:$PATH"' >> $HOME/.bash_profile  
 $ source $HOME/.bash_profile
 ```
-3: Edit "\<shgit-root-path\>/shgit/config/shgit.properties" as your environment if you need.
+4: Edit "\<shgit-root-path\>/shgit/config/shgit.properties" as your environment if you need.
 ```sh
 $ vi $HOME/.shgit/shgit/config/shgit.properties
 ```
-4: Now you can use shgit commands from your terminal.  
+5: Now you can use shgit commands from your terminal.  
 ```sh
 $ shgit -h
 ```
