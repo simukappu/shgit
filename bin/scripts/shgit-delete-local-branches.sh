@@ -6,18 +6,20 @@
 # @auther: Shota Yamazaki                                                      #
 ################################################################################
 
+source ${_SHGIT_HOME}/scripts/shgit-functions.sh
+
 function usage() {
 cat <<_EOT_
 Usage:
   shgit $COMMAND [-fm] [-b base_working_branch]
 
 Description:
-  Script to delete remote branches with confirmation
+  Delete remote branches with confirmation
 
 Options:
   -f  Force delete without confirmation
   -m  Delete merged branches only
-  -b  Base working branch name (default is '$_DEVELOPMENT')
+  -b  Base working branch name (default is '${_BASE_WORKING_BRANCH}')
 
 _EOT_
 exit 1
@@ -26,7 +28,7 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="$_DEVELOPMENT"
+BASE_WORKING_BRANCH="${_BASE_WORKING_BRANCH}"
 MERGED_OPT=""
 while getopts fmb:h OPT
 do
@@ -50,10 +52,7 @@ do
 done
 shift $((OPTIND - 1))
 
-if [ "`git rev-parse --is-inside-work-tree`" != "true" ]; then
-  echo "Directory is not a git repository: $1" 1>&2
-  usage
-fi
+check_git_repository
 
 CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
 if [ "${CURRENT_BRANCH}" != "${BASE_WORKING_BRANCH}" ]; then

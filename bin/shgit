@@ -6,6 +6,9 @@
 # @auther: Shota Yamazaki                                                      #
 ################################################################################
 
+export _SHGIT_HOME=`dirname $0`
+source ${_SHGIT_HOME}/scripts/shgit-functions.sh
+
 function usage() {
 cat <<_EOT_
 Usage:
@@ -25,24 +28,24 @@ _EOT_
 exit 1
 }
 
-source `dirname $0`/scripts/shgit-load-properties.sh `dirname $0`/../config/shgit.properties
+load_properties
 
 COMMAND=$1
 case $COMMAND in
   u|update)
-    bash `dirname $0`/scripts/shgit-update-self-repositoty.sh "$@"
+    bash ${_SHGIT_HOME}/scripts/shgit-update-self-repositoty.sh "$@"
     ;;
   dl|delete-local)
-    bash `dirname $0`/scripts/shgit-delete-local-branches.sh "$@"
+    bash ${_SHGIT_HOME}/scripts/shgit-delete-local-branches.sh "$@"
     ;;
   dr|delete-remote)
-    bash `dirname $0`/scripts/shgit-delete-remote-branches.sh "$@"
+    bash ${_SHGIT_HOME}/scripts/shgit-delete-remote-branches.sh "$@"
     ;;
   p|prepare)
-    bash `dirname $0`/scripts/shgit-prepare-develpment-branch.sh "$@"
+    bash ${_SHGIT_HOME}/scripts/shgit-prepare-develpment-branch.sh "$@"
     ;;
   r|pull-request)
-    bash `dirname $0`/scripts/shgit-pull-request.sh "$@"
+    bash ${_SHGIT_HOME}/scripts/shgit-pull-request.sh "$@"
     ;;
   *)
     usage

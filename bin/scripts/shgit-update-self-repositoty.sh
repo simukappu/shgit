@@ -6,16 +6,18 @@
 # @auther: Shota Yamazaki                                                      #
 ################################################################################
 
+source ${_SHGIT_HOME}/scripts/shgit-functions.sh
+
 function usage() {
 cat <<_EOT_
 Usage:
   shgit $COMMAND [-b base_working_branch] [-r remote_repository] [-u upstream_repository]
 
 Description:
-  Script to update local and remote self repository as upstream repository
+  Update local and your remote repository to upstream repository
 
 Options:
-  -b  Base working branch name (default is '$_DEVELOPMENT')
+  -b  Base working branch name (default is '${_BASE_WORKING_BRANCH}')
   -r  Target remote repository name (default is '$_ORIGIN')
   -u  Target upstream repository name to merge (default is '$_UPSTREAM')
 
@@ -26,7 +28,7 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="$_DEVELOPMENT"
+BASE_WORKING_BRANCH="${_BASE_WORKING_BRANCH}"
 REMOTE_REPO="$_ORIGIN"
 UPSTREAM_REPO="$_UPSTREAM"
 while getopts b:r:u:h OPT
@@ -51,10 +53,7 @@ do
 done
 shift $((OPTIND - 1))
 
-if [ "`git rev-parse --is-inside-work-tree`" != "true" ]; then
-  echo "Directory is not a git repository: $1" 1>&2
-  usage
-fi
+check_git_repository
 
 CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "Current branch is ${CURRENT_BRANCH}"

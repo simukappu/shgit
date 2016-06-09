@@ -54,4 +54,4 @@ else
   echo "$KEY is set to '$DEFAULT'"
   VALUE=DEFAULT
 fi
-export _DEVELOPMENT=$VALUE
+export _BASE_WORKING_BRANCH=$VALUE

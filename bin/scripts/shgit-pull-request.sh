@@ -6,18 +6,20 @@
 # @auther: Shota Yamazaki                                                      #
 ################################################################################
 
+source ${_SHGIT_HOME}/scripts/shgit-functions.sh
+
 function usage() {
 cat <<_EOT_
 Usage:
   shgit $COMMAND [-p] [-o origin_branch] [-b target_branch] [-i issue]
 
 Description:
-  Script to delete remote branches with confirmation
+  Send pull-request from origin repository to target repository
 
 Options:
   -p  Push origin before send pull-request
   -o  Original branch name of pull-request (default is current branch)
-  -b  Target branch name of pull-request (default is '$_DEVELOPMENT')
+  -b  Target branch name of pull-request (default is '${_BASE_WORKING_BRANCH}')
   -i  Issue number associated with a pull-requestBase working branch name
 
 _EOT_
@@ -27,7 +29,7 @@ exit 1
 COMMAND=$1
 shift
 
-TARGET_BRANCH="$_DEVELOPMENT"
+TARGET_BRANCH="${_BASE_WORKING_BRANCH}"
 ISSUE_OPT=""
 while getopts po:b:i:h OPT
 do
@@ -54,10 +56,8 @@ do
 done
 shift $((OPTIND - 1))
 
-if [ "`git rev-parse --is-inside-work-tree`" != "true" ]; then
-  echo "Directory is not a git repository: $1" 1>&2
-  usage
-fi
+check_git_repository
+check_hub_instration
 
 CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
 if [ -z "${ORIGINAL_BRANCH}" ]; then

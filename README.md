@@ -68,5 +68,21 @@ Send pull-request from origin to upstream repository (this function needs [hub](
 $ shgit <r|pull-request> [-p] [-o origin_branch] [-b target_branch] [-i issue]
 ```
 
+## Typical workflow
+1: Create new development branch with cleaning up.
+```sh
+$ shgit p -mcf "your-ticket"
+```
+2: Write your code and commit them.  
+```sh
+$ git commit -m "[your-ticket] Development for your-ticket"
+```
+3: Push to origin repository and send pull-request to upstream repository.
+```sh
+$ shgit r -p
+```
+That is all you need to develop a new function.
+
+
 ## License
 [MIT License](https://github.com/simukappu/shgit/blob/master/LICENSE)

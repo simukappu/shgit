@@ -6,19 +6,21 @@
 # @auther: Shota Yamazaki                                                      #
 ################################################################################
 
+source ${_SHGIT_HOME}/scripts/shgit-functions.sh
+
 function usage() {
 cat <<_EOT_
 Usage:
   shgit $COMMAND [-mcf] [-b base_working_branch] [-r remote_repository] [-u upstream_repository] new_branch_name
 
 Description:
-  Script to prepare new development branch
+  Prepare new development branch
 
 Options:
   -m  Merge: Update your local and remote repositories to upstream repository
   -c  Delete merged branches
   -f  Force delete branches without confirmation
-  -b  Base working branch name (default is '$_DEVELOPMENT')
+  -b  Base working branch name (default is '${_BASE_WORKING_BRANCH}')
   -r  Target remote repository name (default is '$_ORIGIN')
   -u  Target upstream repository name to merge (default is 'upstream')
 
@@ -29,7 +31,7 @@ exit 1
 COMMAND=$1
 shift
 
-BASE_WORKING_BRANCH="$_DEVELOPMENT"
+BASE_WORKING_BRANCH="${_BASE_WORKING_BRANCH}"
 REMOTE_REPO="$_ORIGIN"
 UPSTREAM_REPO="upstream"
 CLEAN_OPT="-m"
@@ -64,8 +66,11 @@ do
 done
 shift $((OPTIND - 1))
 
+check_git_repository
+
 if [ $# -ne 1 ]; then
-  echo "Input new branch name"
+  output_error "Input a new branch name"
+  decho ""
   usage
 fi
 NEW_BRANCH_NAME=$1
