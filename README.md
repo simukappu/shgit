@@ -11,7 +11,7 @@ This tool is designed for following development style.
 * Your new commit in the local repository will be pushed to working branch in your remote repository.
 * Then you will make pull request from your new remote working branch to base working branch (default name is 'development') in upstream repository.
 
-## Requirement
+## Requirements
 shgit needs bash, Git and [hub](https://github.com/github/hub).
 
 1: Install Git and hub.  
