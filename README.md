@@ -88,4 +88,4 @@ That is all you need to develop a new function.
 
 
 ## License
-[MIT License](https://github.com/simukappu/shgit/blob/master/LICENSE)
+[MIT License](LICENSE)
