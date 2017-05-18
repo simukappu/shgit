@@ -66,7 +66,7 @@ $ shgit <p|prepare> [-mcf] [-b base_working_branch] [-r remote_repository] [-u u
 ```
 
 ### Send pull-request
-Send pull-request from origin to upstream repository (this function needs [hub](https://github.com/github/hub) instration)
+Send pull-request from origin to upstream repository (this function needs [hub](https://github.com/github/hub) installation)
 ```sh
 $ shgit <r|pull-request> [-p] [-o origin_branch] [-b target_branch] [-i issue]
 ```
